@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="appointments_info_form_view" model="ir.ui.view">
+      <field name="name">appointments.info.form.view</field>
+      <field name="model">appointments.info</field>
+      <field name="arch" type="xml">
+        <form string="Appointments">
+          <sheet>
+            <group col="4">
+                <field name="patient"/>
+                <field name="age"/>
+                <field name="date1"/>
+                <field name="name_id"/>
+                <field name="reg_note"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="appointments_info_tree_view" model="ir.ui.view">
+      <field name="name">appointments.info.tree.view</field>
+      <field name="model">appointments.info</field>
+      <field name="arch" type="xml">
+        <tree string="Apointments info">
+            <field name="patient"/>
+            <field name="age"/>
+            <field name="date1"/>
+            <field name="name_id"/>
+
+          </tree>
+      </field>
+    </record>
+
+    <record id="appointments_info_action_view" model="ir.actions.act_window">
+      <field name="name">appointments info</field>
+      <field name="res_model">appointments.info</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+      <menuitem
+                id="medical_base_menu"
+                name = "Medical"
+                sequence="0"/>
+    <menuitem
+            id="appointments_info_child_menu"
+            action="appointments_info_action_view"
+            parent="medical_erp.medical_base_menu"
+            name="Appointments"
+            sequence="4"/>
+
+  </data>
+</odoo>

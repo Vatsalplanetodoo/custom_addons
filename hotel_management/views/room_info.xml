@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="room_info_form_view" model="ir.ui.view">
+      <field name="name">room.info.form.view</field>
+      <field name="model">room.info</field>
+      <field name="arch" type="xml">
+        <form string="Room info">
+          <sheet>
+            <group col="6">
+              <field name="roomNumber"/>
+              <field name="floorNumber"/>
+
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+   <record id="sale2_order_inherit_view_training" model="ir.ui.view">
+            <field name="name">sale.order.inherit.view.training</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                       <field name="ver_done"/>
+                       <field name="roomno"/>
+                </xpath>
+              <xpath expr="//page[@name='order_lines']/field[@name='order_line']/tree/field[@name='product_id']" position="after">
+                    <field name="checkin1"/>
+                </xpath>
+                <xpath expr="//field[@name='checkin1']" position = "after">
+                    <field name ='checkout1'/>
+                </xpath>
+                <xpath expr="//field[@name='checkout1']" position = "after">
+                    <field name ='noofperson'/>
+                </xpath>
+                <xpath expr="//field[@name='checkout1']" position = "after">
+                    <field name ='hrsstay'/>
+                </xpath>
+                <xpath expr="//tree/field[@name='name']" position="attributes">
+                     <attribute name="string">Product Description</attribute>
+                 </xpath>
+            </field>
+   </record>
+
+   <record id="res_partner_inherit_view_training" model="ir.ui.view">
+        <field name="name">res.partner.inherit.view.training</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+         <xpath expr="//page[@name='internal_notes']" position="after">
+          <page name="Other" string="Other Expenses">
+              <field name="otherex_ids">
+                <tree editable="bottom">
+                    <field name="product"/>
+                    <field name="quantity"/>
+                    <field name="price"/>
+                    <field name="uom_qty"/>
+                </tree>
+              </field>
+
+          </page>
+          </xpath>
+      </field>
+    </record>
+
+
+<record id="hospitals_info_tree_view" model="ir.ui.view">
+<field name="name">room.info.tree.view</field>
+<field name="model">room.info</field>
+<field name="arch" type="xml">
+  <tree string="Room Info">
+    <field name="roomNumber"/>
+    <field name="floorNumber"/>
+  </tree>
+</field>
+</record>
+
+    <record id="room_info_action_view" model="ir.actions.act_window">
+      <field name="name">Rooms info</field>
+      <field name="res_model">room.info</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+            id="Hotel_base_menu"
+            name = "Hotel"
+            sequence="0"/>
+    <menuitem
+            id="Room_info_child_menu"
+            action="room_info_action_view"
+            parent="hotel_management.Hotel_base_menu"
+            name="Hotel info"
+            sequence="1"/>
+
+  </data>
+</odoo>

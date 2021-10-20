@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="stocks_info_form_view" model="ir.ui.view">
+      <field name="name">stocks.info.form.view</field>
+      <field name="model">stocks.info</field>
+      <field name="arch" type="xml">
+        <form string="Stocks info Details">
+          <sheet>
+            <group col="5">
+                <field name="product"/>
+                <field name="mib"/>
+                <field name="medicines"/>
+                <field name="mit"/>
+                <field name="m_type"/>
+
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="stocks_info_tree_view" model="ir.ui.view">
+      <field name="name">stocks.info.tree.view</field>
+      <field name="model">stocks.info</field>
+      <field name="arch" type="xml">
+        <tree string="Stocks list">
+            <field name="product"/>
+            <field name="mib"/>
+            <field name="medicines"/>
+            <field name="mit"/>
+            <field name="m_type"/>
+          </tree>
+      </field>
+    </record>
+
+    <record id="stocks_info_action_view" model="ir.actions.act_window">
+      <field name="name">stocks info</field>
+      <field name="res_model">stocks.info</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+            id="stocks_info_child_menu"
+            action="stocks_info_action_view"
+            parent="medical_erp.medical_base_menu"
+            name="stocks info"
+            sequence="2"/>
+
+  </data>
+</odoo>

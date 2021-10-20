@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.room.info,access_room_info,model_room_info,base.group_user,1,1,1,1
+access.cust.exp,cust_exp,model_cust_exp,base.group_user,1,1,1,1
+
+

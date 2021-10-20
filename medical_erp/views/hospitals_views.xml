@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="hospitals_info_form_view" model="ir.ui.view">
+      <field name="name">hospitals.info.form.view</field>
+      <field name="model">hospitals.info</field>
+      <field name="arch" type="xml">
+        <form string="hospitals info Details">
+          <sheet>
+            <group col="6">
+                <field name="name"/>
+                <field name="address"/>
+                <field name="hospital_id"/>
+                <field name="stocks_o1"/>
+                <field name="order_date"/>
+                <field name="ord_received"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="hospitals_info_tree_view" model="ir.ui.view">
+      <field name="name">hospitals.info.tree.view</field>
+      <field name="model">hospitals.info</field>
+      <field name="arch" type="xml">
+        <tree string="hospitals list">
+            <field name="name"/>
+            <field name="address"/>
+            <field name="hospital_id"/>
+            <field name="stocks_o1"/>
+            <field name="order_date"/>
+            <field name="ord_received"/>
+          </tree>
+      </field>
+    </record>
+
+    <record id="hospitals_info_action_view" model="ir.actions.act_window">
+      <field name="name">hospitals info</field>
+      <field name="res_model">hospitals.info</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+      <menuitem
+                id="medical_base_menu"
+                name = "Medical"
+                sequence="0"/>
+    <menuitem
+            id="hospitals_info_child_menu"
+            action="hospitals_info_action_view"
+            parent="medical_erp.medical_base_menu"
+            name="Hospitals info"
+            sequence="1"/>
+
+  </data>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.hospitals.info,access_hospitals_info,model_hospitals_info,base.group_user,1,1,1,1
+access.stocks.info,access_stocks_info,model_stocks_info,base.group_user,1,1,1,1
+access.staffs.info,access_staffs_info,model_staffs_info,base.group_user,1,1,1,1
+access.appointments.info,access_appointments_info,model_appointments_info,base.group_user,1,1,1,1

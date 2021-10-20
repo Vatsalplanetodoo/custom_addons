@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="staffs_info_form_view" model="ir.ui.view">
+      <field name="name">staffs.info.form.view</field>
+      <field name="model">staffs.info</field>
+      <field name="arch" type="xml">
+        <form string="staffs info Details">
+          <sheet>
+            <group col="5">
+
+                <field name="staff_name"/>
+                <field name="staff_id"/>
+                <field name="prod_sold"/>
+                <field name="prod_type"/>
+                <field name="prod_sold_to"/>
+                <field name="sell_date"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="staffs_info_tree_view" model="ir.ui.view">
+      <field name="name">staffs.info.tree.view</field>
+      <field name="model">staffs.info</field>
+      <field name="arch" type="xml">
+        <tree string="staffs list">
+            <field name="staff_name"/>
+            <field name="staff_id"/>
+            <field name="prod_sold"/>
+            <field name="prod_type"/>
+            <field name="prod_sold_to"/>
+            <field name="sell_date"/>
+          </tree>
+      </field>
+    </record>
+
+    <record id="staffs_info_action_view" model="ir.actions.act_window">
+      <field name="name">staffs info</field>
+      <field name="res_model">staffs.info</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+            id="staffs_info_child_menu"
+            action="staffs_info_action_view"
+            parent="medical_erp.medical_base_menu"
+            name="staffs info"
+            sequence="1"/>
+
+  </data>
+</odoo>
