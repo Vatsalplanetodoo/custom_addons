@@ -8,11 +8,20 @@
       <field name="arch" type="xml">
         <form string="Room info">
           <sheet>
-            <group col="6">
-              <field name="roomNumber"/>
-              <field name="floorNumber"/>
+              <div class="oe_button_box" name="button_box">
+                  <button name="roomNofunc" type="object" class="oe_stat_button" icon="fa-calendar">
 
-            </group>
+                        <div class="o_stat_info">
+                            <field name="roomNumber" class="o_stat_value"/>
+                            <span class="o_stat_text">Booked on</span>
+                        </div>
+                  </button>
+              </div>
+                <group col="6">
+                    <field name="roomNumber"/>
+                    <field name="floorNumber"/>
+
+                </group>
           </sheet>
         </form>
       </field>

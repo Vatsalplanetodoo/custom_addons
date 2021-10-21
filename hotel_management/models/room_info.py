@@ -11,6 +11,17 @@ class RoomInfo(models.Model):
     floorNumber=fields.Integer('Floor')
     verificationdone=fields.Boolean('Verification Done')
 
+    def roomNofunc(self):
+        return {
+            'name': ("Sale Order"),
+            'view_mode': 'form',
+            'view_type': 'form',
+            'view_id': False,
+            'res_model': 'sale.order',
+            'type': 'ir.actions.act_window',
+            'target': 'new'
+        }
+
     @api.onchange('roomNumber')
     def check_rno(self):
         if self.roomNumber :
